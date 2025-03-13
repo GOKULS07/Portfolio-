@@ -1,0 +1,112 @@
+.skills {
+  background-color: var(--background-light);
+  padding: 60px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .skills {
+  background-color: var(--background-dark);
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.skill-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 200px;
+}
+
+.dark-mode .skill-card {
+  background-color: #2c3e50;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: left 0.5s ease;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.dark-mode .skill-icon {
+  color: var(--secondary-color);
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .skill-name {
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .skill-card {
+    padding: 20px;
+    max-width: 150px;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --accent-color: #feca57;
+  --background-light: #f7f7f7;
+  --text-light: #2d3436;
+  --background-dark: #2d3436;
+  --text-dark: #f7f7f7;
+  --background-gradient: linear-gradient(to bottom right, #fff5f5, #f3f8fb);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--text-light);
+  background: var(--background-gradient); /* Updated background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0 20px; /* Add padding to prevent content from touching edges */
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.App.dark-mode {
+  color: var(--text-dark);
+  background-color: var(--background-dark);
+}
+
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 100px 20px; /* Added padding inside sections */
+  position: relative;
+  overflow: hidden;
+  background: #ffffff; /* Fallback for older browsers */
+  background: linear-gradient(
+    to top right,
+    #ffebeb, /* Soft pink */
+    #fff5e6, /* Light peach */
+    #e6f7ff, /* Light blue */
+    #e6ffe6  /* Soft green */
+  ); /* Rich and unique gradient for sections */
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px; /* Adjust padding for smaller devices */
+  }
+}
